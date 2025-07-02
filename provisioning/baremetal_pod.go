@@ -537,6 +537,10 @@ func createContainerMetal3Ironic(images *Images, info *ProvisioningInfo, config 
 		VolumeMounts: volumes,
 		Env: []corev1.EnvVar{
 			{
+				Name:  "OS_CONDUCTOR__INSPECT_TIMEOUT",
+				Value: "8000",
+			},
+			{
 				Name:  ironicInsecureEnvVar,
 				Value: "true",
 			},
